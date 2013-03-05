@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shopping Cart page demonstrating AJAX using Angular JS</title>
+    <script src="Scripts/angular.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Scripts/app/ShoppongModule.js"></script>
+    <script type="text/javascript" src="Scripts/app/ShoppingCartController.js"></script>
+    
+    <style type="text/css">
+        .bold
+        {
+            font-weight: bold;
+        }
+        
+        table td
+        {
+            padding: 10px;
+        }
+        
+        table th
+        {
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        form input.ng-invalid.ng-dirty {
+			background-color: #FA787E;
+		}
+		
+		form input.ng-valid.ng-dirty {
+			background-color: #78FA89;
+		}
+        
+        span[ng-show]
+        {
+            color: #FA787E;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="shopping">
+        <div ng-controller="ShoppingCartCtrl">
+            <div>
+                Sort by:
+                <select ng-model="sortExpression">
+                    <option value="Name">Name</option>
+                    <option value="Price">Price</option>
+                    <option value="Quantity">Quantity</option>
+                </select>
+            </div>
+            <br />
+            <div>
+                <strong>Filter Results</strong></div>
+            <table>
+                <tr>
+                    <td>
+                        By Any:
+                    </td>
+                    <td>
+                        <input type="text" ng-model="search.$" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        By Name:
+                    </td>
+                    <td>
+                        <input type="text" ng-model="search.Name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        By Price:
+                    </td>
+                    <td>
+                        <input type="text" ng-model="search.Price" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        By Quantity:
+                    </td>
+                    <td>
+                        <input type="text" ng-model="search.Quantity" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table border="1">
+                <thead>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            Price
+                        </td>
+                        <td>
+                            Quantity
+                        </td>
+                        <td>
+                            Remove
+                        </td>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="item in items | orderBy:mySortFunction | filter: search">
+                    <tr>
+                        <td>
+                            {{item.Name}}
+                        </td>
+                        <td>
+                            {{item.Price | rupee}}
+                        </td>
+                        <td>
+                            {{item.Quantity}}
+                        </td>
+                        <td>
+                            <input type="button" value="Remove" ng-click="removeItem(item.ID)" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <div>
+                Total Price: {{totalPrice()}}</div>
+            <br />
+            <form name="itemForm" novalidate>
+            <table>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <input name="name" type="text" ng-model="item.Name" required ng-pattern="name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Price:
+                    </td>
+                    <td>
+                        <input name="price" type="text" ng-model="item.Price" required valid-price />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Quantity:
+                    </td>
+                    <td>
+                        <input name="quantity" type="number" ng-model="item.Quantity" min="1" max="90" ng-pattern="integerval"
+                            required />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="Button" value="Add" ng-click="addItem(item)" ng-disabled="itemForm.$invalid" />
+                    </td>
+                </tr>
+            </table>
+            </form>
+            <div ng-show="itemForm.name.$dirty && itemForm.name.$invalid">
+                <span ng-show="itemForm.name.$error.required">Name cannot be left blank</span> <span
+                    ng-show="itemForm.name.$error.pattern">Name cannot contain numbers or special characters</span>
+            </div>
+            <div ng-show="itemForm.price.$dirty && itemForm.price.$invalid">
+                <span ng-show="itemForm.price.$error.required">Price cannot be blank</span> <span
+                    ng-show="itemForm.price.$error.validPrice">Price should be a number between 50 and
+                    5000 with maximum 2 digits after decimal point</span>
+            </div>
+            <div ng-show="itemForm.quantity.$dirty && itemForm.quantity.$invalid">
+                <span ng-show="itemForm.quantity.$error.required">Quantity cannot be blank</span>
+                <span ng-show="itemForm.quantity.$error.pattern || itemForm.quantity.$error.min || itemForm.quantity.$error.max">
+                    Quantity should be an integer between 1 and 90</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
