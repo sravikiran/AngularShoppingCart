@@ -73,8 +73,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\app\ShoppingCartController.js" />
-    <Content Include="Scripts\app\ShoppongModule.js" />
+    <Content Include="Scripts\app\ShoppingCartController.01.js" />
+    <Content Include="Scripts\app\ShoppingCartController.02.js" />
+    <Content Include="Scripts\app\ShoppingModule.01.js" />
+    <Content Include="Scripts\app\ShoppingModule.02.js" />
+    <Content Include="ShoppingCart-AJAX-WithModule.htm" />
     <Content Include="ShoppingCart-AJAX.htm" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular.js" />
@@ -107,7 +110,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4949</DevelopmentServerPort>
+          <DevelopmentServerPort>4047</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

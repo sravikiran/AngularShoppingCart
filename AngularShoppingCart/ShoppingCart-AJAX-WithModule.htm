@@ -3,9 +3,8 @@
 <head>
     <title>Shopping Cart page demonstrating AJAX using Angular JS</title>
     <script src="Scripts/angular.js" type="text/javascript"></script>
-    <script type="text/javascript" src="Scripts/app/ShoppingModule.01.js"></script>
-    <script type="text/javascript" src="Scripts/app/ShoppingCartController.01.js"></script>
-    
+    <script type="text/javascript" src="Scripts/app/ShoppingModule.02.js"></script>
+    <script type="text/javascript" src="Scripts/app/ShoppingCartController.02.js"></script>
     <style type="text/css">
         .bold
         {
@@ -23,17 +22,24 @@
             text-align: center;
         }
         
-        form input.ng-invalid.ng-dirty {
-			background-color: #FA787E;
-		}
-		
-		form input.ng-valid.ng-dirty {
-			background-color: #78FA89;
-		}
+        form input.ng-invalid.ng-dirty
+        {
+            background-color: #FA787E;
+        }
+        
+        form input.ng-valid.ng-dirty
+        {
+            background-color: #78FA89;
+        }
         
         span[ng-show]
         {
             color: #FA787E;
+        }
+        
+        .errorText
+        {
+            color: Red;
         }
     </style>
 </head>
@@ -158,6 +164,7 @@
                 </tr>
             </table>
             </form>
+            <div class="errorText">{{error}}</div>
             <div ng-show="itemForm.name.$dirty && itemForm.name.$invalid">
                 <span ng-show="itemForm.name.$error.required">Name cannot be left blank</span> <span
                     ng-show="itemForm.name.$error.pattern">Name cannot contain numbers or special characters</span>
