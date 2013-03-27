@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shopping Cart page demonstrating AJAX using Angular JS</title>
+    <script src="Scripts/angular.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Scripts/app/ShoppingModule.03.js"></script>
+    <script type="text/javascript" src="Scripts/app/ShoppingCartController.03.js"></script>
+    <script src="Scripts/app/CartCheckoutController.js" type="text/javascript"></script>
+    <style type="text/css">
+        .bold
+        {
+            font-weight: bold;
+        }
+        
+        table td
+        {
+            padding: 10px;
+        }
+        
+        table th
+        {
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        form input.ng-invalid.ng-dirty
+        {
+            background-color: #FA787E;
+        }
+        
+        form input.ng-valid.ng-dirty
+        {
+            background-color: #78FA89;
+        }
+        
+        span[ng-show]
+        {
+            color: #FA787E;
+        }
+        
+        .errorText
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body ng-app="shopping">
+    <div ng-view>
+    </div>
+</body>
+</html>

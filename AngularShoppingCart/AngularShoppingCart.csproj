@@ -73,14 +73,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\app\CartCheckoutController.js" />
     <Content Include="Scripts\app\ShoppingCartController.01.js" />
     <Content Include="Scripts\app\ShoppingCartController.02.js" />
+    <Content Include="Scripts\app\ShoppingCartController.03.js" />
     <Content Include="Scripts\app\ShoppingModule.01.js" />
     <Content Include="Scripts\app\ShoppingModule.02.js" />
+    <Content Include="Scripts\app\ShoppingModule.03.js" />
     <Content Include="ShoppingCart-AJAX-WithModule.htm" />
     <Content Include="ShoppingCart-AJAX.htm" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular.js" />
+    <Content Include="ShoppingCart-MultipleViews.htm" />
+    <Content Include="Templates\AddRemoveItems.htm" />
+    <Content Include="Templates\CheckoutItems.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

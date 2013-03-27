@@ -1,0 +1,62 @@
+﻿
+<table border="1">
+    <thead>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                Price
+            </td>
+            <td>
+                Quantity
+            </td>
+        </tr>
+    </thead>
+    <tbody ng-repeat="item in items">
+        <tr>
+            <td>
+                {{item.Name}}
+            </td>
+            <td>
+                {{item.Price}}
+            </td>
+            <td>
+                {{item.Quantity}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<a href="#">Add items to/Remove items from cart</a>
+<br />
+<form name="userDetails">
+    <table>
+        <tr>
+            <td>
+                Name:
+            </td>
+            <td>
+                <input type="text" name="name" ng-model="userDetails.Name" ng-disabled="detailsSubmitted" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Phone number:
+            </td>
+            <td>
+                <input type="text" name="phoneNumber" ng-model="userDetails.PhoneNumber" ng-disabled="detailsSubmitted"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                <input type="button" name="submitUserDetails" value="Submit Details" ng-click="checkoutCart()" ng-disabled="detailsSubmitted"/>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <span>{{message}}</span>
+</form>
