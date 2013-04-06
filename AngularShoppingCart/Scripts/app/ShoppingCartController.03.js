@@ -1,4 +1,4 @@
-﻿function ShoppingCartCtrl($scope, shoppingData, shared, $window) {
+﻿function ShoppingCartCtrl($scope, $window, shoppingData, shared) {
     $scope.items = [];
 
     $scope.item = {};
@@ -6,12 +6,13 @@
     $scope.sortExpression = "Name";
 
     function refreshItems() {
-        shoppingData.getAllItems().then(function (data) {
+        shoppingData.getAllItems()
+        .then(function (data) {
             $scope.items = data;
         },
-                function (errorMessage) {
-                    assignError(errorMessage);
-                });
+        function (errorMessage) {
+            assignError(errorMessage);
+        });
     };
 
     $scope.addItem = function (item) {
@@ -23,7 +24,8 @@
                 });
 
         $scope.item = {};
-        $scope.itemForm.$setPristine();
+        if ($scope.itemForm != undefined)
+            $scope.itemForm.$setPristine();
     };
 
     $scope.removeItem = function (id) {
@@ -53,7 +55,7 @@
         return total;
     };
 
-    $scope.purchase = function (event) {
+    $scope.purchase = function () {
         shared.setCartItems($scope.items);
         $window.location.href = "#/checkoutItems";
     };
