@@ -1,9 +1,9 @@
 AngularShoppingCart
 ===================
 
-A sample Shopping cart application using Angular JS and Web API. This application is created for a blog series on <a href="http://sravi-kiran.blogspot.com">my blog</a>.
+A sample Shopping cart application using Angular JS and Web API. This application is created for a series of posts on Angular JS on <a href="http://sravi-kiran.blogspot.com">my blog</a>.
 
-The series consists of following posts as of now:
+The series helps a beginner to understand importance of Angular JS and demonstrates usage of many useful features including unit testability. The series consists of following posts as of now:
 <ul>
 <li>
 <a target="_blank" href="http://sravi-kiran.blogspot.in/2013/02/EasyTwoWayDataBindingInHtmlPagesWithAngularJS.html">Easy two-way data binding in HTML pages with Angular JS</a>
