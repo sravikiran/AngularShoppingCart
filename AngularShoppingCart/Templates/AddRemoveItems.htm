@@ -61,8 +61,8 @@
             </td>
         </tr>
     </thead>
-    <tbody ng-repeat="item in items | orderBy:mySortFunction | filter: search">
-        <tr>
+    <tbody>
+        <tr ng-repeat="item in items | orderBy:mySortFunction | filter: search">
             <td>
                 {{item.Name}}
             </td>
