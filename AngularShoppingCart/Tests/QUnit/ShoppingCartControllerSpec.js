@@ -22,15 +22,15 @@ var storedItems;
 
 module("shopping module", {
     setup: function () {
-        //Loading shopping module
-        var shoppingModule = angular.module("shopping");
+        
+        var appMocks = angular.module("appMocks", []);
 
-        shoppingModule.config(function ($provide) {
+        appMocks.config(function ($provide) {
             $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
         });
 
-        injector = angular.injector(['ng', 'shopping']);
-
+        injector = angular.injector(['ng', 'shopping', 'appMocks']);
+        
         httpBackend = injector.get('$httpBackend');
         httpBackend.expectGET('/api/shoppingCart/').respond(storedItems);
 
