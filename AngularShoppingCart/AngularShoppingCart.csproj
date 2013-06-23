@@ -84,6 +84,8 @@
     <Content Include="Scripts\jasmine-html.js" />
     <Content Include="Scripts\jasmine.async.js" />
     <Content Include="Scripts\jasmine.js" />
+    <Content Include="Scripts\qunit-1.11.0.js" />
+    <Content Include="Scripts\sinon-1.7.3.js" />
     <Content Include="ShoppingCart-AJAX-WithModule.htm" />
     <Content Include="ShoppingCart-AJAX.htm" />
     <Content Include="Global.asax" />
@@ -95,6 +97,9 @@
     <Content Include="Tests\Jasmine\CartCheckoutTestSpec.js" />
     <Content Include="Tests\Jasmine\ShoppingCartControllerSpec.js" />
     <Content Include="Tests\Jasmine\SpecRunner.htm" />
+    <Content Include="Tests\QUnit\CartCheckoutTestSpec.js" />
+    <Content Include="Tests\QUnit\ShoppingCartControllerSpec.js" />
+    <Content Include="Tests\QUnit\SpecRunner.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
