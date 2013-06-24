@@ -29,3 +29,7 @@ The series helps a beginner to understand importance of Angular JS and demonstra
 <li>
 <a target="_blank" href="http://sravi-kiran.blogspot.in/2013/04/UnitTestingAngularJsControllerUsingJasmine.html">Unit Testing AngularJS Controller Using Jasmine </a>
 </li>
+<li>
+<a target="_blank" href="http://sravi-kiran.blogspot.com/2013/06/UnitTestingAngularJsControllerUsingQUnitAndSinon.html">Unit Testing AngularJS Controller Using QUnit and Sinon </a>
+</li>
+</ul>
